@@ -76,6 +76,8 @@ $.prettyDate = {
 				diff < 86400 && messages.hours(Math.floor( diff / 3600 ))) ||
 			day_diff == 1 && messages.yesterday ||
 			day_diff < 7 && messages.days(day_diff) ||
+			day_diff < 8 && messages.week ||
+			day_diff < 14 && messages.days(day_diff) ||
 			day_diff < 31 && messages.weeks(Math.ceil( day_diff / 7 ));
 	}
 
@@ -88,6 +90,7 @@ $.prettyDate.messages = {
 	hour: "1 hour ago",
 	hours: $.prettyDate.template("{0} hours ago"),
 	yesterday: "Yesterday",
+	week: "1 week ago",
 	days: $.prettyDate.template("{0} days ago"),
 	weeks: $.prettyDate.template("{0} weeks ago")
 };

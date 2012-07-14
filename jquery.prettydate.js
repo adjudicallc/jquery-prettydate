@@ -60,7 +60,7 @@ $.prettyDate = {
 	// Takes an ISO time and returns a string representing how
 	// long ago the date represents.
 	format: function(time, isUTC) {
-		var date = $.prettyDate.fromUTC(new Date((time || "").replace(/-/g,"/").replace(/TZ/g," ")), isUTC),
+		var date = $.prettyDate.fromUTC(new Date((time || "")), isUTC),
 			diff = ($.prettyDate.now().getTime() - date.getTime()) / 1000,
 			day_diff = Math.floor(diff / 86400);
 
